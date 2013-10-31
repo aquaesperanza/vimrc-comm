@@ -3,8 +3,7 @@
 （香港） hk.archive.ubuntu.com
 
 （网易） mirrors.163.com
-（搜狐） mirrors.sohu.com
-         cn.archive.ubuntu.com
+（搜狐） mirrors.sohu.com cn.archive.ubuntu.com
 
 （中科大）
 mirrors.ustc.edu.cn
@@ -15,5 +14,6 @@ mirrors.ustc.edu.cn
 cd /etc/apt/
 cp sources.list sources.list.backup
 sudo vi sources.list
-execute vi command:  ":%s/url1/url2/g"
+execute vi command, and save&quit:  ":%s/url1/url2/g"
+sudo apt-get update
 ###
