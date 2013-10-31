@@ -1,0 +1,19 @@
+
+（美国） us.archive.ubuntu.com
+（香港） hk.archive.ubuntu.com
+
+（网易） mirrors.163.com
+（搜狐） mirrors.sohu.com
+         cn.archive.ubuntu.com
+
+（中科大）
+mirrors.ustc.edu.cn
+
+
+
+### Change SourcesList Commands
+cd /etc/apt/
+cp sources.list sources.list.backup
+sudo vi sources.list
+execute vi command:  ":%s/url1/url2/g"
+###
