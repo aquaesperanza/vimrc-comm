@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $USER != 'akinari' ];then
+echo "Sorry, please login with akinari."
+exit 2
+fi
+
+GAROOT="/home/akinari/bin/"
+GACLIENT="goagent/local/proxy.py"
+
+declare -i gapid=`ps -ax | awk '/goagent.*proxy\.py$/{print $1}'`
+
+if [ $gapid -gt 0 ];then
+echo -e "\a\aHey akinari,\nGoAgent is already Running at PID:$gapid."
+echo ""
+echo -n "Terminate it? [no|yes]"
+read opt
+[[ $opt =~ (y|Y) ]] && (kill $gapid; echo "Job Done!")
+else
+python ${GAROOT}${GACLIENT} >/dev/null 2>&1 &
+echo "GoAgent is running at PID:$!."
+fi
